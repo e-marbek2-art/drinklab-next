@@ -16,4 +16,3 @@ Opne **index.html** direkte i nettlesaren. Ingen installasjon eller lokal server
 Nødvendige bibliotek- og skrifttypelisensar er bevarte i kodekommentarane. Produktbileta har eigne bruksrettar.
 
 Produktbilete frå TINE er henta frå [tine.no](https://www.tine.no/) og krediterte TINE. Ringnes-bilete er henta frå [ringnes.no](https://www.ringnes.no/) og krediterte Ringnes. Kjeldeoversikta for produktbileta ligg i data.js.
-
