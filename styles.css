@@ -1,0 +1,4556 @@
+/*
+ * DRINKLAB – STYLES.CSS
+ *
+ * INNHALDSLISTE
+ *  1. LOKALE SKRIFTTYPAR
+ *  2. SAMANLIKNING MED VEKT
+ *  3. UTFORSKING AV MINDRE KJENDE STOFF
+ *  4. UTBLANDING AV DRIKKAR
+ *  5. FELLES GRUNNREGLAR
+ *  6. NAVIGASJON OG LOGO
+ *  7. INTRODUKSJON OG PRODUKTBILETE
+ *  8. GLASOMRÅDE OG AVSPELING
+ *  9. FELLES OM-INNHALD OG BOTNTEKST
+ * 10. CSS-ANIMASJONAR OG SKJERMTILPASSING
+ * 11. DRIKKEUTVAL OG PRODUKTKORT
+ * 12. DRIKKESIDA OG INGREDIENSLENKJER
+ * 13. INGREDIENSBIBLIOTEK OG SØK
+ * 14. INGREDIENSARTIKLAR
+ * 15. OM-SIDA OG VIDARE SKJERMTILPASSING
+ * 16. JUSTERINGAR AV MENY OG DRIKKEUTVAL
+ * 17. FANER OG VIDARE GLASTILPASSING
+ * 18. INGREDIENSAR FOR EI BESTEMD DRIKKE
+ * 19. METODETEKST OG VIDARE MOBILTILPASSING
+ * 20. KAPITTELVELJAR OG TILSETJINGSTYPE
+ * 21. LESBARHEIT I INGREDIENSARTIKLAR
+ * 22. AVSPELINGSFART
+ * 23. NÆRINGSTABELL OG MOBILVISNING
+ * 24. SISTE JUSTERINGAR AV FAGTEKST
+ * 25. SPRÅKVAL OG TILGJENGE
+ * 26. SKRIFTTYPELISENSAR
+ *
+ * FINN FRAM: Bruk Ctrl + F og søk til dømes etter "DEL 23:".
+ * Dei nummererte delane forklarer reglane i den rekkjefølgja dei står.
+ * Nokre komponentar har justeringar fleire stader; søk på klassenamnet
+ * for å finne alle. Rekkefølgja er bevart for å halde utsjånaden lik.
+ * @media tilpassar sida til skjermstorleik eller rørslepreferansar.
+ * 3D-glaset blir teikna av animation.js; CSS styrer ramma rundt det.
+ */
+
+/* =====================================================================
+   DEL 1: LOKALE SKRIFTTYPAR
+   DM Sans og Manrope. Fontfilene ligg i bilete/.
+   ===================================================================== */
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(bilete/font-1.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(bilete/font-2.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 450;
+  font-display: swap;
+  src: url(bilete/font-1.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 450;
+  font-display: swap;
+  src: url(bilete/font-2.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(bilete/font-1.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(bilete/font-2.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 550;
+  font-display: swap;
+  src: url(bilete/font-1.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 550;
+  font-display: swap;
+  src: url(bilete/font-2.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(bilete/font-1.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(bilete/font-2.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 650;
+  font-display: swap;
+  src: url(bilete/font-1.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 650;
+  font-display: swap;
+  src: url(bilete/font-2.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(bilete/font-1.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(bilete/font-2.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(bilete/font-3.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(bilete/font-4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(bilete/font-3.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(bilete/font-4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(bilete/font-3.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(bilete/font-4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 650;
+  font-display: swap;
+  src: url(bilete/font-3.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 650;
+  font-display: swap;
+  src: url(bilete/font-4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(bilete/font-3.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(bilete/font-4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 750;
+  font-display: swap;
+  src: url(bilete/font-3.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 750;
+  font-display: swap;
+  src: url(bilete/font-4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(bilete/font-3.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(bilete/font-4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* =====================================================================
+   DEL 2: SAMANLIKNING MED VEKT
+   Vising av næring når kjelda oppgir verdiar per 100 g.
+   ===================================================================== */
+.mass-reference {
+  border-top: 1px solid #e1e8f1;
+}
+.mass-reference-intro {
+  padding: 24px 30px;
+  background: #fafbfd;
+}
+.mass-reference h3 {
+  margin: 0 0 9px;
+  font-size: 20px;
+  color: #233b5c;
+  letter-spacing: -.4px;
+}
+.mass-reference-intro p {
+  margin: 0;
+  max-width: 75ch;
+  font-size: 13px;
+  line-height: 1.8;
+  color: #52647c;
+}
+@media(max-width:700px) {
+  .mass-reference-intro {
+    padding: 23px 17px;
+  }
+  .mass-reference h3 {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+  .mass-reference-intro p {
+    font-size: 12px;
+  }
+}
+/* =====================================================================
+   DEL 3: UTFORSKING AV MINDRE KJENDE STOFF
+   Oppdagingskort, kjemiske stoff og filtrering.
+   ===================================================================== */
+.discovery-start {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: #eef3ff;
+  border: 1px solid #dce6fb;
+  border-radius: 11px;
+  padding: 18px 23px;
+  margin: 0 0 25px;
+}
+.discovery-start strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #284d89;
+}
+.discovery-start p {
+  margin: 6px 0 0;
+  font-size: 12px;
+  line-height: 1.7;
+  color: #536d92;
+}
+.discovery-start button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 13px 17px;
+  background: #2463eb;
+  color: #fff;
+  border-radius: 7px;
+  font-size: 12px;
+  line-height: 1.5;
+  max-width: 44%;
+  flex: none;
+  text-align: left;
+}
+.discovery-start button svg {
+  flex: none;
+}
+.lab {
+  scroll-margin-top: 90px;
+}
+.discovery-section {
+  margin: 45px 0 35px;
+}
+.discovery-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 25px;
+  margin-bottom: 23px;
+}
+.discovery-heading .eyebrow {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.discovery-heading h2 {
+  font-size: 30px;
+  font-weight: 550;
+  letter-spacing: -1px;
+  margin: 15px 0 12px;
+  color: #25354d;
+}
+.discovery-heading h2 span {
+  color: #2463eb;
+}
+.discovery-heading p {
+  font-size: 13px;
+  line-height: 1.85;
+  color: #61718a;
+  max-width: 75ch;
+  margin: 0;
+}
+.discovery-heading>.text-link {
+  flex: none;
+  margin-bottom: 4px;
+  font-size: 12px;
+}
+.discovery-grid {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 15px;
+}
+.discovery-card {
+  border: 1px solid #dfe7f3;
+  border-radius: 11px;
+  background: #fff;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.discovery-kind {
+  font-size: 9px;
+  line-height: 1.6;
+  font-weight: 600;
+  color: #3564a5;
+  background: #edf4ff;
+  border-radius: 4px;
+  padding: 5px 7px;
+  align-self: flex-start;
+}
+.discovery-kind.natural {
+  color: #447466;
+  background: #eaf5ef;
+}
+.discovery-symbol {
+  font-size: 14px;
+  color: #7f98b7;
+  margin: 24px 0 9px;
+  overflow-wrap: anywhere;
+}
+.discovery-card h3 {
+  font-size: 19px;
+  line-height: 1.4;
+  font-weight: 550;
+  letter-spacing: -.5px;
+  margin: 0;
+  color: #25354d;
+  overflow-wrap: anywhere;
+}
+.discovery-card h3 a {
+  display: inline;
+}
+.discovery-card h3 svg {
+  vertical-align: middle;
+  margin-left: 6px;
+  color: #7497c9;
+}
+.discovery-card>p {
+  font-size: 12px;
+  line-height: 1.85;
+  color: #60718a;
+  margin: 13px 0 18px;
+}
+.discovery-card>small {
+  display: block;
+  font-size: 10px;
+  line-height: 1.7;
+  color: #5d7c6b;
+  margin-bottom: 18px;
+}
+.discovery-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: auto;
+  align-items: center;
+}
+.discovery-actions a,.discovery-actions button {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  font-size: 11px;
+  color: #2463eb;
+}
+.discovery-actions button {
+  background: #f0f5ff;
+  border-radius: 5px;
+  padding: 9px;
+}
+.discovery-filter {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 25px 0 18px;
+}
+.discovery-filter button {
+  padding: 11px 16px;
+  font-size: 12px;
+  border: 1px solid #dce5f2;
+  border-radius: 7px;
+  background: #f8fafd;
+  color: #5e718b;
+}
+.discovery-filter button.selected {
+  color: #2459a7;
+  background: #eaf2ff;
+  border-color: #afc9ee;
+}
+.scope-guide-count {
+  font-size: 12px;
+  color: #60718a;
+  line-height: 1.8;
+  margin: 18px 0;
+}
+.guide-origin {
+  font-size: 10px;
+  line-height: 1.6;
+  display: block;
+  color: #55786c;
+  margin: 13px 0 0;
+}
+.chemistry-context {
+  background: #edf7f2!important;
+  border-color: #d6e9df!important;
+}
+.card-discover {
+  font-size: 10px;
+  line-height: 1.8;
+  color: #506b8c;
+  margin: 0 0 20px;
+  overflow-wrap: anywhere;
+}
+.card-discover strong {
+  font-weight: 600;
+  color: #3a5781;
+}
+@media(max-width:1050px) {
+  .discovery-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+  .discovery-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 17px;
+  }
+}
+@media(max-width:700px) {
+  .discovery-start {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 19px;
+    gap: 15px;
+  }
+  .discovery-start strong {
+    font-size: 15px;
+  }
+  .discovery-start p {
+    font-size: 13px;
+  }
+  .discovery-start button {
+    max-width: none;
+    min-height: 44px;
+    font-size: 13px;
+  }
+  .discovery-section {
+    margin: 35px 0;
+  }
+  .discovery-heading h2 {
+    font-size: 27px;
+  }
+  .discovery-heading p {
+    font-size: 14px;
+  }
+  .discovery-grid {
+    grid-template-columns: 1fr;
+  }
+  .discovery-card {
+    padding: 23px;
+  }
+  .discovery-kind {
+    font-size: 11px;
+  }
+  .discovery-card h3 {
+    font-size: 23px;
+  }
+  .discovery-card>p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+  .discovery-card>small {
+    font-size: 12px;
+  }
+  .discovery-actions a,.discovery-actions button {
+    font-size: 13px;
+    min-height: 40px;
+  }
+  .discovery-filter button {
+    min-height: 44px;
+    font-size: 13px;
+  }
+  .scope-guide-count {
+    font-size: 13px;
+  }
+  .guide-origin,.card-discover {
+    font-size: 12px;
+  }
+}
+/* =====================================================================
+   DEL 4: UTBLANDING AV DRIKKAR
+   Merknader om til dømes ferdig utblanda saft.
+   ===================================================================== */
+.preparation-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #edf4ff;
+  border: 1px solid #dae7fa;
+  border-radius: 10px;
+  padding: 18px 22px;
+  margin: 0 0 24px;
+  color: #365573;
+}
+.preparation-note>svg {
+  flex: none;
+  margin-top: 3px;
+  color: #2463eb;
+}
+.preparation-note p {
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 0;
+}
+.preparation-note strong {
+  font-weight: 600;
+}
+@media(max-width:700px) {
+  .preparation-note {
+    padding: 17px;
+    gap: 10px;
+  }
+  .preparation-note p {
+    font-size: 13px;
+  }
+}
+/* =====================================================================
+   DEL 5: FELLES GRUNNREGLAR
+   Fargar, skrift, lenkjer, knappar og sidebreidd.
+   ===================================================================== */
+:root {
+  font-family: DM Sans,sans-serif;
+  color: #172033;
+  background: #fff;
+  font-weight: 400;
+  font-size: 14px;
+  font-synthesis: none;
+  --blue: #2463eb;
+  --muted: #788190;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+body {
+  margin: 0;
+}
+button,a,input {
+  -webkit-tap-highlight-color: transparent;
+}
+button,a {
+  touch-action: manipulation;
+}
+button {
+  font: inherit;
+  cursor: pointer;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  border: 0;
+}
+button:focus-visible,a:focus-visible,input:focus-visible {
+  outline: 3px solid #7ca6ff;
+  outline-offset: 5px;
+}
+button:disabled {
+  opacity: .3;
+  cursor: default;
+}
+.page-width {
+  max-width: 1220px;
+  width: calc(100% - 112px);
+  margin-inline: auto;
+}
+/* =====================================================================
+   DEL 6: NAVIGASJON OG LOGO
+   Menyen øvst på sida og felles merkevare.
+   ===================================================================== */
+.nav-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #ffffffed;
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid #eef0f4;
+}
+.nav {
+  height: 88px;
+  max-width: 1320px;
+  margin: auto;
+  padding: 0 54px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: Manrope,sans-serif;
+  font-weight: 800;
+  font-size: 25px;
+  letter-spacing: -1.2px;
+}
+.brand-icon {
+  display: grid;
+  place-items: center;
+  width: 33px;
+  height: 35px;
+  background: #edf3ff;
+  border-radius: 9px;
+  color: var(--blue);
+}
+.brand-dot {
+  color: var(--blue);
+  margin-left: -7px;
+}
+.nav-links {
+  display: flex;
+  gap: 37px;
+  color: #727b8b;
+  font-size: 13px;
+}
+.nav-links a:hover {
+  color: var(--blue);
+}
+.nav-cta {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  background: #f4f7fb;
+  border: 1px solid #e5eaf0;
+  border-radius: 7px;
+  padding: 12px 17px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.mobile-toggle,.mobile-menu {
+  display: none;
+}
+/* =====================================================================
+   DEL 7: INTRODUKSJON OG PRODUKTBILETE
+   Overskrifter, produktbilete, faktaboksar og innleiing.
+   ===================================================================== */
+.hero {
+  min-height: 650px;
+  display: grid;
+  grid-template-columns: 1.12fr 1fr;
+  align-items: center;
+  gap: 15px;
+  padding-top: 25px;
+  padding-bottom: 20px;
+}
+.eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.live-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--blue);
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 0 4px #2463eb0b;
+}
+.hero h1 {
+  font-family: Manrope,sans-serif;
+  font-size: clamp(42px,4.4vw,64px);
+  line-height: 1.12;
+  font-weight: 650;
+  letter-spacing: -3.2px;
+  margin: 25px 0 23px;
+}
+.hero h1>span {
+  color: var(--blue);
+}
+.hero-description {
+  color: #808795;
+  font-size: 15px;
+  line-height: 1.9;
+  max-width: 365px;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  border-radius: 7px;
+  padding: 16px 21px;
+  font-weight: 550;
+  font-size: 13px;
+  transition: transform .2s,box-shadow .2s;
+}
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px #2463eb2a;
+}
+.primary {
+  background: var(--blue);
+  color: #fff;
+  margin-top: 18px;
+}
+.hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 10px;
+  color: #9098a5;
+  margin-top: 25px;
+}
+.hero-meta>span:first-child {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.tiny-orbit {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  border: 1px solid #a1adbd;
+  border-radius: 50%;
+  position: relative;
+}
+.tiny-orbit:after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: #a1adbd;
+}
+.meta-divider {
+  height: 12px;
+  width: 1px;
+  background: #e3e7ec;
+}
+.product-art {
+  position: relative;
+  height: 540px;
+  background: radial-gradient(ellipse at 50% 48%,#dfeaff77,transparent 66%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-can {
+  height: 355px;
+  position: relative;
+  transform: rotate(-12deg);
+  z-index: 2;
+  filter: drop-shadow(12px 18px 13px #253d6823);
+  animation: can-float 8s ease-in-out infinite;
+}
+.can-shadow {
+  position: absolute;
+  width: 160px;
+  height: 20px;
+  background: #3c506c21;
+  filter: blur(14px);
+  border-radius: 50%;
+  bottom: 85px;
+  transform: rotate(-8deg);
+}
+.art-orbit {
+  position: absolute;
+  border: 1px solid #e5ebf2;
+  border-radius: 50%;
+  width: 370px;
+  height: 370px;
+}
+.orbit-two {
+  width: 470px;
+  height: 470px;
+  border-style: dashed;
+  border-color: #e6edf4;
+  opacity: .8;
+}
+.art-label,.art-volume {
+  position: absolute;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #8a97a9;
+  left: 50%;
+  transform: translate(-50%);
+  white-space: nowrap;
+}
+.art-label {
+  top: 20px;
+}
+.art-volume {
+  bottom: 21px;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+}
+.art-volume span {
+  margin: 0 9px;
+}
+.art-cross {
+  position: absolute;
+  color: #a5b9d6;
+  font-weight: 300;
+  font-size: 20px;
+}
+.cross-one {
+  left: 27px;
+  top: 140px;
+}
+.cross-two {
+  right: 26px;
+  bottom: 125px;
+}
+.floating-fact {
+  position: absolute;
+  z-index: 3;
+  background: #ffffffed;
+  box-shadow: 0 6px 32px #253d6809;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid #e9edf3;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 14px 18px;
+  animation: can-float 9s ease-in-out infinite reverse;
+}
+.floating-fact small {
+  display: block;
+  color: #8c95a3;
+  font-size: 8px;
+  letter-spacing: 1.7px;
+}
+.floating-fact strong {
+  display: block;
+  font-size: 23px;
+  font-weight: 550;
+  line-height: 1.4;
+}
+.floating-fact strong span {
+  font-size: 12px;
+  color: #939baa;
+  font-weight: 400;
+}
+.fact-caffeine {
+  right: -5px;
+  top: 155px;
+}
+.fact-sugar {
+  left: 0;
+  bottom: 120px;
+}
+.fact-icon {
+  color: var(--blue);
+  background: #eff5ff;
+  border-radius: 50%;
+  padding: 10px;
+  display: flex;
+}
+.sugar-cube {
+  height: 24px;
+  width: 24px;
+  background: linear-gradient(140deg,#fff,#e1e6ed);
+  box-shadow: 3px 3px #d3dbe7;
+  transform: rotate(-15deg);
+  border: 1px solid #edf0f4;
+  margin: 6px;
+}
+.intro-strip {
+  border-top: 1px solid #e9edf2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 27px 0 36px;
+  gap: 20px;
+}
+.intro-strip>span {
+  font-size: 8px;
+  letter-spacing: 1.6px;
+  color: #98a0ac;
+}
+.intro-strip p {
+  font-size: 12px;
+}
+.intro-strip p span {
+  color: #8c94a2;
+}
+.intro-strip>a {
+  border: 1px solid #e5eaf0;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  color: #8590a1;
+}
+/* =====================================================================
+   DEL 8: GLASOMRÅDE OG AVSPELING
+   Ramma rundt 3D-glaset, ingredienspanel, tidslinje og kontrollar.
+   ===================================================================== */
+.experience-section {
+  background: #f6f8fb;
+  padding: 74px 0 45px;
+  border-top: 1px solid #edf0f5;
+  border-bottom: 1px solid #edf0f5;
+}
+.blue {
+  color: var(--blue);
+}
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 30px;
+}
+.section-heading h2,.about h2 {
+  font-family: Manrope,sans-serif;
+  font-size: 35px;
+  font-weight: 600;
+  letter-spacing: -1.5px;
+  margin: 13px 0 0;
+}
+.section-heading>p {
+  font-size: 12px;
+  color: #8791a0;
+  line-height: 1.8;
+  margin: 0;
+}
+.lab {
+  background: #fff;
+  border: 1px solid #e6ebf2;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 15px 55px #263d5905;
+}
+.lab-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 30px;
+  padding: 19px 0;
+  border-bottom: 1px solid #edf0f4;
+}
+.drink-identity {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+.drink-identity img {
+  height: 43px;
+}
+.drink-identity strong {
+  font-size: 13px;
+  font-weight: 600;
+  display: block;
+}
+.drink-identity span {
+  font-size: 8px;
+  letter-spacing: 1.6px;
+  color: #909aaa;
+  display: block;
+  margin-top: 6px;
+}
+.drink-identity i {
+  display: inline-block;
+  width: 2px;
+  height: 2px;
+  background: #9aa4b4;
+  vertical-align: middle;
+  margin: 0 6px;
+}
+.lab-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 1.5px;
+  font-size: 8px;
+  color: #8c97a7;
+}
+.lab-badge .live-dot {
+  width: 5px;
+  height: 5px;
+}
+.lab-main {
+  display: grid;
+  grid-template-columns: 1.48fr 1fr;
+  min-height: 470px;
+}
+.scene-area {
+  height: 470px;
+  position: relative;
+  background: radial-gradient(ellipse at 50% 60%,#f0f4f7aa,transparent 65%);
+  overflow: hidden;
+}
+.scene-area canvas {
+  position: relative;
+  z-index: 1;
+}
+.scene-index {
+  position: absolute;
+  top: 25px;
+  left: 30px;
+  color: #7c8ca0;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+.scene-index span {
+  color: #c3cbd5;
+}
+.scene-formula {
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  color: #a4aebd;
+  font-size: 10px;
+  letter-spacing: 1px;
+  animation: fade-up .5s;
+}
+.scene-caption {
+  position: absolute;
+  bottom: 19px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-size: 7px;
+  color: #9aa7b7;
+  letter-spacing: 1.4px;
+}
+.scene-caption .tiny-orbit {
+  width: 10px;
+  height: 10px;
+}
+.ingredient-panel {
+  border-left: 1px solid #f0f2f5;
+  margin: 32px 0;
+  padding: 7px 36px 0;
+  display: flex;
+  flex-direction: column;
+}
+.panel-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 8px;
+  color: #94a0b0;
+  letter-spacing: 1.5px;
+}
+.panel-eyebrow>span {
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+}
+.ingredient-content {
+  animation: fade-up .5s;
+}
+.ingredient-symbol {
+  display: inline-flex;
+  margin-top: 26px;
+}
+.ingredient-content h3 {
+  font-family: Manrope,sans-serif;
+  font-size: 25px;
+  letter-spacing: -1px;
+  font-weight: 600;
+  margin: 15px 0 21px;
+}
+.quantity {
+  font-family: Manrope,sans-serif;
+  font-size: 43px;
+  letter-spacing: -1.7px;
+  font-weight: 550;
+  line-height: 1.2;
+}
+.quantity.vitamins {
+  font-size: 26px;
+}
+.quantity-unit {
+  font-size: 10px;
+  color: #9aa2af;
+  margin-top: 7px;
+}
+.ingredient-content p {
+  font-size: 12px;
+  color: #7c8797;
+  line-height: 1.9;
+  margin-top: 20px;
+  max-width: 290px;
+}
+.panel-note {
+  border-top: 1px solid #edf0f4;
+  padding-top: 18px;
+  margin-top: auto;
+  font-size: 9px;
+  color: #95a0ae;
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+.panel-note>span {
+  width: 4px;
+  height: 4px;
+  background: #b5c5d9;
+  border-radius: 50%;
+}
+.timeline-stages {
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  border-top: 1px solid #edf0f4;
+  border-bottom: 1px solid #edf0f4;
+  padding: 0 25px;
+}
+.timeline-stages button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  background: transparent;
+  color: #97a1af;
+  padding: 19px 0;
+  font-size: 10px;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+.timeline-stages button>span {
+  font-size: 8px;
+  border: 1px solid #e5eaf0;
+  border-radius: 50%;
+  width: 21px;
+  height: 21px;
+  display: grid;
+  place-items: center;
+}
+.timeline-stages .active {
+  color: var(--blue);
+  border-bottom-color: var(--blue);
+  font-weight: 600;
+}
+.timeline-stages .active>span {
+  background: #eaf1ff;
+  border-color: #eaf1ff;
+}
+.timeline-stages .complete {
+  color: #8399b6;
+}
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 21px 28px;
+}
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: #8290a3;
+  min-height: 34px;
+  min-width: 30px;
+  padding: 5px;
+  gap: 8px;
+}
+.icon-button:hover {
+  color: var(--blue);
+}
+.play-button {
+  border-radius: 50%;
+  height: 38px;
+  width: 38px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  background: var(--blue);
+  color: #fff;
+}
+.time {
+  font-size: 9px;
+  font-variant-numeric: tabular-nums;
+  color: #8090a5;
+}
+.controls input {
+  flex: 1;
+  width: 0;
+  appearance: none;
+  height: 3px;
+  background: linear-gradient(to right,var(--blue) var(--progress),#e8edf4 var(--progress));
+  border-radius: 5px;
+  cursor: pointer;
+  min-height: 3px;
+}
+.controls input::-webkit-slider-thumb {
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  background: var(--blue);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px #2463eb12;
+}
+.controls input::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  background: var(--blue);
+  border: 0;
+  border-radius: 50%;
+}
+.replay {
+  margin-left: 13px;
+  font-size: 10px;
+}
+.total-time {
+  color: #a9b3c0;
+}
+.educational-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 9px;
+  color: #9aa3af;
+  line-height: 1.7;
+  margin: 20px 0;
+}
+.details-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 23px auto 0;
+  background: transparent;
+  font-size: 11px;
+  color: #7d8b9f;
+}
+.details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  background: #fff;
+  border: 1px solid #e5eaf0;
+  border-radius: 12px;
+  padding: 28px;
+  margin-top: 24px;
+  animation: fade-up .3s;
+}
+.details h3 {
+  font-size: 13px;
+}
+.details p,.details small {
+  font-size: 11px;
+  line-height: 1.8;
+  color: #8591a1;
+}
+.details dl {
+  font-size: 11px;
+}
+.details dl>div {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #edf0f4;
+  padding: 8px 0;
+}
+.details dd {
+  margin: 0;
+}
+.source-links {
+  grid-column: 1/-1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 10px;
+  color: #8190a4;
+}
+.source-links a {
+  display: flex;
+  align-items: center;
+  color: var(--blue);
+  gap: 3px;
+}
+.source-links span {
+  width: 100%;
+  font-size: 9px;
+}
+.nutrition-mini {
+  display: flex;
+  gap: 22px;
+  margin-top: auto;
+  border-top: 1px solid #edf0f4;
+  padding-top: 15px;
+}
+.nutrition-mini div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.nutrition-mini strong {
+  font-size: 13px;
+  font-weight: 550;
+}
+.nutrition-mini span {
+  font-size: 9px;
+  color: #94a0b0;
+}
+.begin-overlay {
+  position: absolute;
+  z-index: 3;
+  bottom: 65px;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  border: 1px solid #e0e7f2;
+  border-radius: 30px;
+  padding: 8px 16px 8px 8px;
+  background: #fffffff2;
+  box-shadow: 0 8px 28px #1c3a6b10;
+  font-size: 10px;
+  color: #64748b;
+}
+.begin-overlay>span {
+  display: grid;
+  place-items: center;
+  background: var(--blue);
+  color: #fff;
+  width: 31px;
+  height: 31px;
+  border-radius: 50%;
+}
+.canvas-message {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #8796ac;
+  padding: 30px;
+  font-size: 12px;
+}
+/* =====================================================================
+   DEL 9: FELLES OM-INNHALD OG BOTNTEKST
+   Grunnreglar for om-tekst og footer.
+   ===================================================================== */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  padding: 87px 0;
+}
+.about h2 {
+  font-size: 34px;
+  line-height: 1.3;
+}
+.about>div:last-child {
+  padding-top: 9px;
+}
+.about p {
+  font-size: 13px;
+  line-height: 1.9;
+  color: #8a93a1;
+  max-width: 400px;
+}
+.about p:first-child {
+  color: #4b586b;
+  font-size: 15px;
+  margin-top: 0;
+}
+.about-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 9px;
+  color: #8797ad;
+  margin-top: 12px;
+}
+footer {
+  border-top: 1px solid #e9edf2;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 28px 0 35px;
+  color: #939eae;
+}
+footer .brand {
+  font-size: 20px;
+  color: #172033;
+}
+footer .brand>svg {
+  color: var(--blue);
+}
+footer>span {
+  font-size: 9px;
+}
+footer>span:nth-child(3) {
+  margin-left: auto;
+}
+footer i {
+  display: inline-block;
+  height: 2px;
+  width: 2px;
+  background: #bbc3cf;
+  margin: 0 6px;
+  vertical-align: middle;
+}
+footer>a:last-child {
+  border: 1px solid #e9edf2;
+  padding: 8px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+/* =====================================================================
+   DEL 10: CSS-ANIMASJONAR OG SKJERMTILPASSING
+   Små grensesnittrørsler og første sett med skjermtilpassingar.
+   ===================================================================== */
+@keyframes can-float {
+  0%,to {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -9px;
+  }
+}
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(7px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media(min-width:1600px) {
+  .hero {
+    min-height: 730px;
+  }
+  .hero h1 {
+    font-size: 66px;
+  }
+  .product-art {
+    height: 590px;
+  }
+  .hero-can {
+    height: 400px;
+  }
+}
+@media(max-width:1050px) {
+  .page-width {
+    width: calc(100% - 64px);
+  }
+  .nav {
+    padding: 0 32px;
+  }
+  .hero h1 {
+    font-size: 48px;
+    letter-spacing: -2.4px;
+  }
+  .product-art {
+    height: 490px;
+  }
+  .hero-can {
+    height: 320px;
+  }
+  .art-orbit {
+    width: 300px;
+    height: 300px;
+  }
+  .orbit-two {
+    width: 370px;
+    height: 370px;
+  }
+  .floating-fact {
+    padding: 10px 12px;
+    gap: 9px;
+  }
+  .fact-caffeine {
+    right: -10px;
+  }
+  .fact-sugar {
+    left: -8px;
+  }
+  .hero-meta {
+    font-size: 8px;
+  }
+  .hero {
+    min-height: 590px;
+  }
+  .ingredient-panel {
+    padding: 7px 25px 0;
+  }
+  .ingredient-content h3 {
+    font-size: 22px;
+  }
+  .quantity {
+    font-size: 36px;
+  }
+  .timeline-stages button {
+    font-size: 9px;
+    gap: 5px;
+  }
+  .about {
+    gap: 60px;
+  }
+}
+@media(max-width:700px) {
+  html {
+    scroll-padding-top: 70px;
+  }
+  .page-width {
+    width: calc(100% - 40px);
+  }
+  .nav {
+    height: 70px;
+    padding: 0 20px;
+  }
+  .brand {
+    font-size: 23px;
+  }
+  .nav-links,.nav-cta {
+    display: none;
+  }
+  .mobile-toggle {
+    display: flex;
+  }
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0 20px 15px;
+    background: #fff;
+  }
+  .mobile-menu a,.mobile-menu button {
+    padding: 15px 8px;
+    font-size: 14px;
+    text-align: left;
+    background: transparent;
+    border-bottom: 1px solid #edf0f4;
+  }
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding-top: 49px;
+    gap: 8px;
+  }
+  .hero h1 {
+    font-size: clamp(39px,9.5vw,60px);
+    letter-spacing: -2.4px;
+    line-height: 1.16;
+    margin: 21px 0 17px;
+  }
+  .eyebrow {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+  .hero-description {
+    font-size: 13px;
+    max-width: 330px;
+    line-height: 1.85;
+  }
+  .button {
+    font-size: 12px;
+    padding: 15px 20px;
+    margin-top: 13px;
+  }
+  .hero-meta {
+    font-size: 8px;
+    gap: 10px;
+    margin-top: 21px;
+  }
+  .product-art {
+    height: 430px;
+    margin-top: 13px;
+    width: 100%;
+    max-width: 450px;
+    align-self: center;
+  }
+  .hero-can {
+    height: 295px;
+  }
+  .art-label {
+    top: 12px;
+    font-size: 7px;
+  }
+  .art-volume {
+    bottom: 15px;
+    font-size: 7px;
+  }
+  .art-orbit {
+    width: 280px;
+    height: 280px;
+  }
+  .orbit-two {
+    width: min(350px,95%);
+    height: min(350px,85vw);
+  }
+  .fact-caffeine {
+    top: 112px;
+    right: -4px;
+  }
+  .fact-sugar {
+    bottom: 98px;
+    left: 0;
+  }
+  .floating-fact {
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+  .floating-fact strong {
+    font-size: 20px;
+  }
+  .floating-fact small {
+    font-size: 7px;
+  }
+  .fact-icon {
+    padding: 7px;
+  }
+  .can-shadow {
+    bottom: 68px;
+  }
+  .cross-one {
+    left: 8px;
+    top: 110px;
+  }
+  .cross-two {
+    right: 7px;
+    bottom: 84px;
+  }
+  .intro-strip {
+    padding: 23px 0;
+    margin-top: 4px;
+  }
+  .intro-strip>span {
+    font-size: 6px;
+    max-width: 100px;
+    line-height: 1.8;
+  }
+  .intro-strip p {
+    font-size: 9px;
+    max-width: 150px;
+    line-height: 1.6;
+  }
+  .intro-strip>a {
+    width: 27px;
+    height: 27px;
+    flex: none;
+  }
+  .experience-section {
+    padding: 45px 0 32px;
+  }
+  .section-heading {
+    align-items: start;
+    gap: 15px;
+    margin-bottom: 23px;
+  }
+  .section-heading h2 {
+    font-size: 27px;
+    letter-spacing: -1px;
+  }
+  .section-heading>p {
+    font-size: 9px;
+    max-width: 116px;
+    padding-top: 18px;
+    line-height: 1.7;
+  }
+  .lab {
+    border-radius: 11px;
+  }
+  .lab-top {
+    margin: 0 18px;
+    padding: 15px 0;
+  }
+  .drink-identity img {
+    height: 34px;
+  }
+  .drink-identity strong {
+    font-size: 11px;
+  }
+  .drink-identity span {
+    font-size: 6px;
+  }
+  .lab-badge {
+    font-size: 6px;
+    letter-spacing: 1px;
+  }
+  .lab-badge .live-dot {
+    width: 4px;
+    height: 4px;
+  }
+  .lab-main {
+    display: flex;
+    flex-direction: column;
+  }
+  .scene-area {
+    height: 370px;
+  }
+  .scene-index {
+    top: 18px;
+    left: 18px;
+    font-size: 8px;
+  }
+  .scene-formula {
+    right: 18px;
+    top: 18px;
+    font-size: 8px;
+  }
+  .scene-caption {
+    bottom: 9px;
+    font-size: 6px;
+  }
+  .ingredient-panel {
+    border-left: 0;
+    border-top: 1px solid #edf0f4;
+    margin: 12px 19px 23px;
+    padding: 21px 0 0;
+    min-height: 268px;
+  }
+  .panel-eyebrow {
+    font-size: 7px;
+  }
+  .ingredient-content {
+    position: relative;
+  }
+  .ingredient-symbol {
+    position: absolute;
+    top: 0;
+    right: 3px;
+    margin-top: 20px;
+    opacity: .65;
+  }
+  .ingredient-symbol svg {
+    width: 25px;
+  }
+  .ingredient-content h3 {
+    font-size: 21px;
+    margin: 17px 0 13px;
+  }
+  .quantity {
+    font-size: 32px;
+    letter-spacing: -1px;
+  }
+  .quantity.vitamins {
+    font-size: 23px;
+  }
+  .quantity-unit {
+    font-size: 9px;
+    margin-top: 5px;
+  }
+  .ingredient-content p {
+    max-width: none;
+    font-size: 11px;
+    line-height: 1.85;
+    margin: 15px 0 18px;
+  }
+  .panel-note {
+    padding-top: 12px;
+    font-size: 8px;
+  }
+  .nutrition-mini {
+    padding-top: 12px;
+    gap: 30px;
+  }
+  .timeline-stages {
+    padding: 0 9px;
+  }
+  .timeline-stages button {
+    flex-direction: column;
+    gap: 6px;
+    font-size: 7px;
+    padding: 14px 0 12px;
+  }
+  .timeline-stages button>span {
+    width: 19px;
+    height: 19px;
+    font-size: 7px;
+  }
+  .controls {
+    gap: 6px;
+    padding: 17px 13px;
+  }
+  .play-button {
+    height: 34px;
+    width: 34px;
+    margin-right: 1px;
+  }
+  .controls .icon-button {
+    min-width: 27px;
+    min-height: 38px;
+  }
+  .controls input {
+    margin: 0 7px;
+    height: 4px;
+  }
+  .controls input::-webkit-slider-thumb {
+    width: 14px;
+    height: 14px;
+  }
+  .replay {
+    margin-left: 2px;
+  }
+  .replay span,.total-time {
+    display: none;
+  }
+  .time {
+    font-size: 8px;
+  }
+  .educational-note {
+    align-items: flex-start;
+    text-align: center;
+    font-size: 8px;
+    padding: 0 9px;
+    gap: 5px;
+    line-height: 1.8;
+  }
+  .educational-note svg {
+    flex: none;
+    margin-top: 2px;
+  }
+  .details-toggle {
+    font-size: 10px;
+  }
+  .details {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 15px;
+  }
+  .details p {
+    font-size: 10px;
+  }
+  .about {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 48px 0;
+  }
+  .about h2 {
+    font-size: 30px;
+  }
+  .about>div:last-child {
+    padding-top: 0;
+  }
+  .about p {
+    font-size: 12px;
+  }
+  .about p:first-child {
+    font-size: 14px;
+  }
+  .about-tag {
+    font-size: 8px;
+  }
+  footer {
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 25px 0 max(25px,env(safe-area-inset-bottom));
+    position: relative;
+  }
+  footer .brand {
+    font-size: 18px;
+  }
+  footer>span:nth-child(2) {
+    margin-left: auto;
+    font-size: 8px;
+  }
+  footer>span:nth-child(3) {
+    margin: 0;
+    width: 100%;
+    font-size: 8px;
+  }
+  footer>a:last-child {
+    position: absolute;
+    bottom: 18px;
+    right: 0;
+    padding: 6px;
+  }
+  footer>a:last-child svg {
+    width: 14px;
+  }
+  .begin-overlay {
+    bottom: 45px;
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .hero-can,.floating-fact,.ingredient-content,.scene-formula {
+    animation: none;
+  }
+  .button {
+    transition: none;
+  }
+}
+/* =====================================================================
+   DEL 11: DRIKKEUTVAL OG PRODUKTKORT
+   Framsida med drikkekort og inngang til ingrediensbiblioteket.
+   ===================================================================== */
+.nav-prototype {
+  font-size: 8px;
+  letter-spacing: 1.3px;
+  color: #96a1b0;
+}
+.nav-links .selected {
+  color: var(--blue);
+}
+main {
+  min-height: calc(100vh - 190px);
+}
+h1:focus {
+  outline: none;
+}
+.collection-page {
+  padding-top: 64px;
+}
+.collection-intro h1,.page-intro h1 {
+  font-family: Manrope,sans-serif;
+  font-size: clamp(42px,4.2vw,61px);
+  font-weight: 600;
+  line-height: 1.14;
+  letter-spacing: -2.8px;
+  margin: 20px 0;
+}
+.collection-intro h1 span,.page-intro h1 span,.experience-heading h1 span,.article-title h1 span {
+  color: var(--blue);
+}
+.collection-intro p,.page-intro>p {
+  font-size: 14px;
+  color: #8893a2;
+  line-height: 1.85;
+  max-width: 550px;
+}
+.collection-bar {
+  display: flex;
+  justify-content: space-between;
+  font-size: 8px;
+  letter-spacing: 1.6px;
+  color: #93a0b2;
+  margin: 40px 0 18px;
+}
+.drink-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 23px;
+}
+.drink-card {
+  border: 1px solid #e4e9f0;
+  border-radius: 13px;
+  overflow: hidden;
+  display: block;
+  transition: transform .25s,box-shadow .25s,border-color .25s;
+  background: #fff;
+}
+.drink-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--drink-accent);
+  box-shadow: 0 18px 45px #1c35500b;
+}
+.drink-card-art {
+  height: 308px;
+  background: radial-gradient(ellipse,var(--drink-tint),#fafbfc);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.card-number,.card-size {
+  position: absolute;
+  top: 22px;
+  font-size: 7px;
+  letter-spacing: 1.4px;
+  color: #8898ad;
+  z-index: 2;
+}
+.card-number {
+  left: 22px;
+}
+.card-size {
+  right: 22px;
+}
+.drink-card-art img {
+  height: 224px;
+  max-width: 150px;
+  object-fit: contain;
+  z-index: 1;
+  filter: drop-shadow(8px 14px 10px #1e345824);
+  transform: rotate(-8deg);
+  transition: transform .5s;
+}
+.drink-card:hover img {
+  transform: rotate(-3deg) translateY(-6px);
+}
+.card-orbit {
+  position: absolute;
+  border: 1px solid #9cacbd25;
+  width: 235px;
+  height: 235px;
+  border-radius: 50%;
+}
+.card-orbit:after {
+  content: "";
+  position: absolute;
+  inset: 20px;
+  border: 1px dashed #9cacbd20;
+  border-radius: 50%;
+}
+.card-art-caption {
+  position: absolute;
+  bottom: 18px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #9ca8b7;
+  font-size: 7px;
+  letter-spacing: 1.4px;
+}
+.drink-card-copy {
+  padding: 23px;
+}
+.drink-card h2 {
+  font-family: Manrope,sans-serif;
+  font-size: 21px;
+  font-weight: 650;
+  letter-spacing: -.6px;
+  margin: 0;
+}
+.drink-card-copy>p {
+  font-size: 11px;
+  color: #8a95a5;
+  line-height: 1.8;
+  min-height: 59px;
+  margin: 11px 0 19px;
+}
+.card-stats {
+  display: flex;
+  gap: 35px;
+  border-top: 1px solid #edf0f4;
+  padding-top: 16px;
+}
+.card-stats>div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.card-stats strong {
+  font-size: 13px;
+  font-weight: 600;
+}
+.card-stats span {
+  font-size: 8px;
+  color: #97a2b1;
+}
+.card-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--drink-accent);
+  font-size: 11px;
+  font-weight: 600;
+  margin-top: 24px;
+}
+.library-invitation {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  background: #f5f8fc;
+  border: 1px solid #e9eef6;
+  border-radius: 11px;
+  padding: 28px;
+  margin: 38px 0 65px;
+}
+.invitation-icon {
+  color: var(--blue);
+  background: #e8f0ff;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  width: 55px;
+  height: 55px;
+  flex: none;
+}
+.library-invitation h2 {
+  font-size: 15px;
+  font-weight: 550;
+  margin: 0 0 7px;
+}
+.library-invitation p {
+  font-size: 11px;
+  line-height: 1.8;
+  color: #8a96a6;
+  max-width: 470px;
+  margin: 0;
+}
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--blue);
+  font-size: 11px;
+  background: transparent;
+}
+.library-invitation .text-link {
+  margin-left: auto;
+  flex: none;
+}
+.page-intro {
+  padding-top: 64px;
+  padding-bottom: 22px;
+}
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #8795a9;
+  padding: 0 0 25px;
+}
+.back-link:hover {
+  color: var(--blue);
+}
+/* =====================================================================
+   DEL 12: DRIKKESIDA OG INGREDIENSLENKJER
+   Oppsett for den valde drikka, kapittel og kjeldemerknader.
+   ===================================================================== */
+.experience-page {
+  background: #f7f9fc;
+  padding: 29px 0 58px;
+}
+.experience-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+.experience-heading h1 {
+  font-family: Manrope,sans-serif;
+  font-size: 40px;
+  letter-spacing: -1.8px;
+  font-weight: 600;
+  margin: 13px 0 0;
+}
+.experience-heading>p {
+  font-size: 12px;
+  line-height: 1.8;
+  color: #8d98a8;
+}
+.experience-page .scene-area {
+  height: 550px;
+}
+.experience-page .ingredient-panel {
+  margin: 32px 0;
+  padding: 15px 35px 0;
+}
+.experience-page .ingredient-content h3 {
+  margin-top: 25px;
+  font-size: 26px;
+}
+.experience-page .quantity.vitamins {
+  font-size: 26px;
+  letter-spacing: -.6px;
+}
+.experience-page .ingredient-content p {
+  font-size: 12px;
+  line-height: 1.95;
+  max-width: 300px;
+}
+.ingredient-learn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  line-height: 1.6;
+  color: var(--blue);
+  border-top: 1px solid #eaf0f8;
+  padding-top: 20px;
+  margin-top: auto;
+}
+.ingredient-learn>svg:last-child {
+  margin-left: auto;
+  flex: none;
+}
+.expanded-timeline {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #d4ddec transparent;
+  padding: 0 15px;
+}
+.expanded-timeline>button {
+  flex: 1;
+  min-width: 80px;
+  flex-direction: column;
+  font-size: 8px;
+  padding: 15px 4px;
+  gap: 7px;
+}
+.experience-page .controls {
+  gap: 12px;
+}
+.experience-page .controls .icon-button {
+  min-width: 44px;
+  min-height: 44px;
+}
+.experience-page .play-button {
+  height: 44px;
+  width: 44px;
+}
+.formula-notes {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 60px;
+  margin-top: 46px;
+}
+.formula-notes h2 {
+  font-family: Manrope,sans-serif;
+  font-size: 23px;
+  letter-spacing: -.7px;
+  font-weight: 600;
+}
+.formula-notes p {
+  font-size: 12px;
+  color: #8995a6;
+  line-height: 1.9;
+}
+.ingredient-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+.ingredient-chips a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  border: 1px solid #e3eaf3;
+  border-radius: 5px;
+  background: #fff;
+  padding: 9px 11px;
+  color: #74859c;
+}
+.ingredient-chips a:hover {
+  border-color: #9cb9f7;
+  color: var(--blue);
+}
+.source-note {
+  border-left: 1px solid #e5ebf3;
+  padding-left: 30px;
+  padding-top: 10px;
+}
+.source-note a {
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--blue);
+  margin: 12px 0;
+}
+.source-note small {
+  display: block;
+  font-size: 9px;
+  color: #a1abba;
+  line-height: 1.8;
+  margin-top: 19px;
+}
+/* =====================================================================
+   DEL 13: INGREDIENSBIBLIOTEK OG SØK
+   Søkefelt, kategoriar, ingredienskort og tomme trefflister.
+   ===================================================================== */
+.library-page {
+  padding-bottom: 35px;
+}
+.library-tools {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 22px;
+  gap: 20px;
+}
+.search-field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #e0e7f0;
+  border-radius: 8px;
+  padding: 14px 16px;
+  width: 350px;
+  color: #9aa7ba;
+}
+.search-field input {
+  border: 0;
+  outline: 0;
+  font: inherit;
+  font-size: 12px;
+  width: 100%;
+  background: transparent;
+  color: #25364e;
+}
+.search-field input:focus-visible {
+  outline: none;
+}
+.search-field:focus-within {
+  box-shadow: 0 0 0 3px #2463eb18;
+  border-color: #8aaef7;
+}
+.search-field button {
+  padding: 0;
+  display: flex;
+  background: transparent;
+  color: #91a0b5;
+}
+.library-tools>span {
+  font-size: 8px;
+  letter-spacing: 1.3px;
+  color: #98a4b4;
+}
+.category-tabs {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin: 20px 0 30px;
+}
+.category-tabs button {
+  background: #f7f9fc;
+  color: #8e9aab;
+  border: 1px solid #edf1f7;
+  border-radius: 30px;
+  padding: 10px 16px;
+  font-size: 10px;
+}
+.category-tabs .selected {
+  background: #eaf1ff;
+  color: var(--blue);
+  border-color: #d7e4ff;
+}
+.ingredient-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 20px;
+}
+.ingredient-card {
+  border: 1px solid #e5ebf2;
+  border-radius: 11px;
+  padding: 25px;
+  transition: transform .2s,border-color .2s;
+  display: flex;
+  flex-direction: column;
+}
+.ingredient-card:hover {
+  transform: translateY(-4px);
+  border-color: #99b7f3;
+}
+.ingredient-card>div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #a0aec0;
+}
+.category-label {
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+}
+.chemical-symbol {
+  font-family: Manrope,sans-serif;
+  font-size: 22px;
+  letter-spacing: -.8px;
+  color: #a1b7d7;
+  margin: 27px 0 12px;
+}
+.ingredient-card h2 {
+  font-family: Manrope,sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -.5px;
+  margin: 0;
+}
+.ingredient-card p {
+  font-size: 11px;
+  line-height: 1.85;
+  color: #8b98a9;
+  margin: 12px 0 25px;
+}
+.read-guide {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--blue);
+  font-size: 9px;
+  margin-top: auto;
+}
+.library-disclaimer {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+  background: #f6f8fc;
+  padding: 22px 26px;
+  margin: 32px 0;
+  border-radius: 9px;
+  color: #8b9bb2;
+}
+.library-disclaimer svg {
+  flex: none;
+}
+.library-disclaimer p {
+  font-size: 11px;
+  line-height: 1.9;
+  margin: 0;
+}
+.empty-state {
+  padding: 50px 0;
+  text-align: center;
+}
+.empty-state h2 {
+  font-size: 19px;
+  font-weight: 500;
+}
+/* =====================================================================
+   DEL 14: INGREDIENSARTIKLAR
+   Forklaringar, fordelar, ulemper, kjelder og relaterte drikkar.
+   ===================================================================== */
+.ingredient-article {
+  max-width: 960px;
+  padding-top: 35px;
+  padding-bottom: 65px;
+}
+.article-header {
+  padding-top: 23px;
+}
+.article-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+.article-title h1 {
+  font-family: Manrope,sans-serif;
+  font-size: 45px;
+  font-weight: 600;
+  letter-spacing: -1.8px;
+  line-height: 1.2;
+  margin: 22px 0;
+}
+.article-title>span {
+  font-family: Manrope,sans-serif;
+  font-size: 20px;
+  letter-spacing: -.4px;
+  color: #abbdd5;
+  flex: none;
+}
+.article-header>p {
+  font-size: 15px;
+  color: #7d8da2;
+  line-height: 1.9;
+  max-width: 670px;
+}
+.body-explanation {
+  display: flex;
+  gap: 24px;
+  padding: 28px;
+  background: #edf3ff;
+  border: 1px solid #e2ebfc;
+  border-radius: 11px;
+  margin-top: 30px;
+}
+.body-explanation>svg {
+  color: var(--blue);
+  flex: none;
+  margin-top: 5px;
+}
+.body-explanation p {
+  font-size: 14px;
+  line-height: 1.85;
+  margin-bottom: 0;
+  color: #637996;
+  max-width: 720px;
+}
+.effects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-top: 26px;
+}
+.effects-grid>section {
+  border-radius: 11px;
+  padding: 30px;
+  border: 1px solid;
+}
+.effect-positive {
+  background: #f6faf7;
+  border-color: #e1eee6!important;
+}
+.effect-negative {
+  background: #fdf9f4;
+  border-color: #f0e7da!important;
+}
+.effect-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 8px;
+  letter-spacing: 1.3px;
+  color: #77968b;
+}
+.effect-negative .effect-label {
+  color: #b29166;
+}
+.effects-grid h2 {
+  font-family: Manrope,sans-serif;
+  font-size: 25px;
+  font-weight: 550;
+  letter-spacing: -.8px;
+  margin: 22px 0 12px;
+}
+.effects-grid p {
+  font-size: 13px;
+  line-height: 1.95;
+  color: #7b899a;
+  margin: 0;
+}
+.evidence-block {
+  border: 1px solid #e4eaf3;
+  border-radius: 11px;
+  padding: 32px;
+  margin-top: 26px;
+}
+.evidence-block h2 {
+  font-family: Manrope,sans-serif;
+  font-size: 25px;
+  letter-spacing: -.7px;
+  font-weight: 550;
+}
+.evidence-block>p {
+  font-size: 13px;
+  line-height: 2;
+  color: #7e8ea3;
+  max-width: 760px;
+}
+.article-sources {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 23px;
+}
+.article-sources a {
+  font-size: 10px;
+  color: var(--blue);
+  display: inline-flex;
+  gap: 5px;
+  align-items: center;
+}
+.evidence-block>small {
+  font-size: 8px;
+  color: #9ba7b7;
+  display: block;
+  margin-top: 22px;
+}
+.found-in {
+  margin-top: 45px;
+}
+.found-in .section-heading {
+  align-items: center;
+}
+.found-in h2 {
+  font-size: 23px;
+}
+.found-in>a {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  border-top: 1px solid #e9edf4;
+  padding: 17px 4px;
+}
+.found-in img {
+  height: 46px;
+  width: 25px;
+  object-fit: contain;
+}
+.found-in strong {
+  font-size: 12px;
+  font-weight: 550;
+}
+.found-in span {
+  display: block;
+  font-size: 9px;
+  color: #91a0b4;
+  margin-top: 5px;
+}
+.found-in>a>svg {
+  margin-left: auto;
+  color: var(--blue);
+}
+/* =====================================================================
+   DEL 15: OM-SIDA OG VIDARE SKJERMTILPASSING
+   Prinsippa bak DrinkLab og neste sett med mobilreglar.
+   ===================================================================== */
+.about-page {
+  padding-bottom: 65px;
+}
+.about-principles {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 24px;
+  margin: 30px 0 20px;
+}
+.about-principles section {
+  border: 1px solid #e4eaf4;
+  border-radius: 10px;
+  padding: 28px;
+}
+.about-principles svg {
+  color: var(--blue);
+  width: 22px;
+}
+.about-principles h2 {
+  font-size: 18px;
+  font-weight: 550;
+  margin-top: 24px;
+}
+.about-principles p {
+  font-size: 12px;
+  color: #8b99ac;
+  line-height: 1.9;
+}
+@media(max-width:1050px) {
+  .nav-prototype {
+    display: none;
+  }
+  .drink-grid {
+    gap: 16px;
+  }
+  .drink-card-copy {
+    padding: 19px;
+  }
+  .drink-card h2 {
+    font-size: 18px;
+  }
+  .drink-card-art {
+    height: 280px;
+  }
+  .drink-card-art img {
+    height: 200px;
+  }
+  .drink-card-copy>p {
+    min-height: 80px;
+  }
+  .library-invitation {
+    flex-wrap: wrap;
+  }
+  .library-invitation .text-link {
+    margin-left: 77px;
+  }
+  .experience-page .ingredient-panel {
+    padding: 10px 25px 0;
+  }
+  .experience-page .ingredient-content h3 {
+    font-size: 22px;
+  }
+  .experience-page .quantity {
+    font-size: 36px;
+  }
+  .experience-page .quantity.vitamins {
+    font-size: 23px;
+  }
+  .formula-notes {
+    gap: 35px;
+  }
+  .ingredient-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+  .article-title h1 {
+    font-size: 37px;
+  }
+  .article-title>span {
+    font-size: 16px;
+  }
+}
+@media(max-width:700px) {
+  .collection-page {
+    padding-top: 37px;
+  }
+  .collection-intro h1,.page-intro h1 {
+    font-size: 40px;
+    letter-spacing: -2px;
+    line-height: 1.16;
+  }
+  .collection-intro p,.page-intro>p {
+    font-size: 12px;
+  }
+  .collection-bar {
+    margin-top: 30px;
+    font-size: 6px;
+    letter-spacing: 1px;
+  }
+  .drink-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .drink-card-art {
+    height: 265px;
+  }
+  .drink-card-art img {
+    height: 205px;
+    max-width: 130px;
+  }
+  .card-orbit {
+    width: 215px;
+    height: 215px;
+  }
+  .drink-card-copy {
+    padding: 22px;
+  }
+  .drink-card h2 {
+    font-size: 22px;
+  }
+  .drink-card-copy>p {
+    min-height: 0;
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+  .card-stats {
+    gap: 50px;
+  }
+  .card-stats strong {
+    font-size: 14px;
+  }
+  .card-stats span {
+    font-size: 9px;
+  }
+  .card-action {
+    font-size: 12px;
+  }
+  .library-invitation {
+    padding: 23px;
+    gap: 15px;
+    align-items: start;
+    margin: 28px 0 40px;
+  }
+  .invitation-icon {
+    width: 40px;
+    height: 40px;
+  }
+  .invitation-icon svg {
+    width: 22px;
+  }
+  .library-invitation>div {
+    flex: 1;
+  }
+  .library-invitation h2 {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .library-invitation p {
+    font-size: 11px;
+  }
+  .library-invitation .text-link {
+    margin-left: 55px;
+    font-size: 10px;
+  }
+  .experience-page {
+    padding-top: 22px;
+  }
+  .back-link {
+    font-size: 10px;
+    padding-bottom: 25px;
+  }
+  .experience-heading {
+    display: block;
+    margin-bottom: 22px;
+  }
+  .experience-heading h1 {
+    font-size: 32px;
+    letter-spacing: -1.3px;
+    margin-top: 13px;
+  }
+  .experience-heading>p {
+    font-size: 11px;
+    margin: 12px 0 0;
+  }
+  .experience-heading>p br {
+    display: none;
+  }
+  .experience-page .scene-area {
+    height: 410px;
+  }
+  .experience-page .lab-main {
+    display: flex;
+  }
+  .experience-page .ingredient-panel {
+    margin: 10px 20px 24px;
+    padding: 21px 0 0;
+    min-height: 280px;
+  }
+  .experience-page .ingredient-content h3 {
+    font-size: 23px;
+    margin-top: 20px;
+    padding-right: 25px;
+  }
+  .experience-page .quantity {
+    font-size: 33px;
+  }
+  .experience-page .quantity.vitamins {
+    font-size: 23px;
+  }
+  .experience-page .ingredient-content p {
+    font-size: 11px;
+    max-width: none;
+    margin-bottom: 19px;
+  }
+  .ingredient-learn {
+    font-size: 10px;
+    padding-top: 15px;
+  }
+  .expanded-timeline {
+    padding: 0 7px;
+    display: grid;
+    grid-template-columns: repeat(4,minmax(0,1fr));
+    overflow: visible;
+  }
+  .expanded-timeline button {
+    min-width: 0;
+    font-size: 7px;
+    padding: 12px 2px;
+    gap: 5px;
+  }
+  .expanded-timeline button>span {
+    width: 18px;
+    height: 18px;
+  }
+  .experience-page .controls {
+    padding: 13px 8px;
+    gap: 4px;
+  }
+  .experience-page .controls .icon-button {
+    min-width: 40px;
+    min-height: 44px;
+  }
+  .experience-page .play-button {
+    height: 40px;
+    width: 40px;
+  }
+  .experience-page .controls input {
+    margin: 0 5px;
+  }
+  .experience-page .nutrition-mini {
+    margin-top: 18px;
+    gap: 25px;
+  }
+  .experience-page .nutrition-mini strong {
+    font-size: 11px;
+  }
+  .formula-notes {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    margin-top: 30px;
+  }
+  .formula-notes h2 {
+    font-size: 22px;
+  }
+  .formula-notes p {
+    font-size: 11px;
+  }
+  .source-note {
+    padding: 20px 0 0;
+    border-left: 0;
+    border-top: 1px solid #e1e9f3;
+  }
+  .ingredient-chips a {
+    padding: 10px;
+    font-size: 9px;
+  }
+  .page-intro {
+    padding-top: 38px;
+    padding-bottom: 10px;
+  }
+  .library-tools {
+    margin-top: 20px;
+    gap: 12px;
+  }
+  .search-field {
+    width: 100%;
+    padding: 13px;
+  }
+  .library-tools>span {
+    display: none;
+  }
+  .category-tabs {
+    gap: 6px;
+    margin-bottom: 22px;
+  }
+  .category-tabs button {
+    font-size: 9px;
+    padding: 10px 12px;
+    min-height: 40px;
+  }
+  .ingredient-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .ingredient-card {
+    padding: 22px;
+  }
+  .chemical-symbol {
+    font-size: 23px;
+    margin: 24px 0 13px;
+  }
+  .ingredient-card h2 {
+    font-size: 21px;
+  }
+  .ingredient-card p {
+    font-size: 12px;
+  }
+  .read-guide {
+    font-size: 10px;
+    min-height: 23px;
+  }
+  .library-disclaimer {
+    align-items: start;
+    padding: 20px;
+    gap: 12px;
+  }
+  .library-disclaimer p {
+    font-size: 10px;
+  }
+  .library-disclaimer svg {
+    width: 17px;
+    margin-top: 4px;
+  }
+  .ingredient-article {
+    padding-top: 25px;
+    padding-bottom: 40px;
+  }
+  .article-header {
+    padding-top: 7px;
+  }
+  .article-title {
+    display: block;
+  }
+  .article-title h1 {
+    font-size: 35px;
+    letter-spacing: -1.5px;
+    margin: 20px 0 15px;
+  }
+  .article-title>span {
+    font-size: 17px;
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+  .article-header>p {
+    font-size: 13px;
+  }
+  .body-explanation {
+    padding: 22px;
+    gap: 15px;
+    margin-top: 25px;
+  }
+  .body-explanation>svg {
+    width: 22px;
+  }
+  .body-explanation .eyebrow {
+    font-size: 7px;
+    letter-spacing: 1.1px;
+  }
+  .body-explanation p {
+    font-size: 12px;
+    margin-top: 12px;
+  }
+  .effects-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 18px;
+  }
+  .effects-grid>section {
+    padding: 24px;
+  }
+  .effect-label {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+  .effects-grid h2 {
+    font-size: 25px;
+    margin-top: 18px;
+  }
+  .effects-grid p {
+    font-size: 12px;
+  }
+  .evidence-block {
+    padding: 24px;
+    margin-top: 18px;
+  }
+  .evidence-block h2 {
+    font-size: 23px;
+    line-height: 1.4;
+  }
+  .evidence-block>p {
+    font-size: 12px;
+  }
+  .article-sources {
+    gap: 15px;
+    flex-direction: column;
+  }
+  .article-sources a {
+    min-height: 30px;
+  }
+  .evidence-block>small {
+    font-size: 8px;
+    line-height: 1.8;
+  }
+  .found-in .section-heading {
+    display: block;
+  }
+  .found-in h2 {
+    font-size: 23px;
+    margin-top: 10px;
+  }
+  .about-principles {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .about-principles section {
+    padding: 24px;
+  }
+  .about-page {
+    padding-bottom: 45px;
+  }
+  .nav-wrap .mobile-toggle {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  footer>span:nth-child(3) {
+    max-width: 85%;
+    line-height: 1.8;
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+  .drink-card,.drink-card-art img,.ingredient-card {
+    transition: none;
+  }
+  .drink-card:hover,.ingredient-card:hover {
+    transform: none;
+  }
+}
+/* =====================================================================
+   DEL 16: JUSTERINGAR AV MENY OG DRIKKEUTVAL
+   Seinare tilpassingar av mobilmeny, filter og produktbilete.
+   ===================================================================== */
+.nav .mobile-toggle {
+  display: none;
+}
+@media(max-width:700px) {
+  .nav .mobile-toggle {
+    display: flex;
+  }
+}
+.local-label {
+  font-size: 8px;
+  letter-spacing: 1.3px;
+  color: #8c9caf;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.local-label>span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #75a594;
+}
+.collection-intro {
+  position: relative;
+}
+.collection-intro:after {
+  content: "A CLOSER LOOK";
+  position: absolute;
+  right: 0;
+  top: 35px;
+  writing-mode: vertical-rl;
+  letter-spacing: 4px;
+  font-size: 8px;
+  color: #bdc8d6;
+}
+.collection-intro h1 {
+  font-size: 64px;
+  letter-spacing: -3px;
+}
+.collection-intro p {
+  max-width: 570px;
+}
+.drink-filters {
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+.drink-grid {
+  row-gap: 28px;
+}
+.drink-card-art {
+  height: 290px;
+}
+.drink-card-art img {
+  max-width: 190px;
+  height: 225px;
+}
+.drink-card-art:has(img[src$=".svg"]) img {
+  height: 245px;
+  max-width: 210px;
+  transform: rotate(0);
+}
+.card-stats strong {
+  font-size: 12px;
+}
+.drink-card-copy>p {
+  min-height: 42px;
+}
+.card-art-caption {
+  font-size: 6px;
+}
+/* =====================================================================
+   DEL 17: FANER OG VIDARE GLASTILPASSING
+   Faner, ingredienslenkjer, kapittel og blandeknapp.
+   ===================================================================== */
+.drink-tabs {
+  display: flex;
+  gap: 30px;
+  border-bottom: 1px solid #e1e7f0;
+  margin: 24px 0 27px;
+}
+.drink-tabs a {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 11px;
+  color: #8c99ab;
+  padding: 15px 0;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+.drink-tabs a.selected {
+  color: #2463eb;
+  border-bottom-color: #2463eb;
+}
+.drink-tabs a>span {
+  background: #eaf1fd;
+  font-size: 8px;
+  padding: 3px 6px;
+  border-radius: 4px;
+}
+.experience-page .scene-area {
+  height: 620px;
+  background: #f0f3f5;
+}
+.experience-page .lab-main {
+  grid-template-columns: 1.65fr 1fr;
+}
+.scene-formula,.scene-index {
+  z-index: 2;
+  pointer-events: none;
+}
+.scene-formula {
+  max-width: 65%;
+  text-align: right;
+  font-size: 9px;
+}
+.experience-page .scene-caption {
+  z-index: 2;
+  bottom: 17px;
+  font-size: 6px;
+  letter-spacing: 1px;
+}
+.experience-page .begin-overlay {
+  bottom: 64px;
+}
+.experience-page .ingredient-content h3 {
+  font-size: 25px;
+  line-height: 1.3;
+  margin-top: 24px;
+}
+.experience-page .ingredient-content p {
+  max-width: none;
+  font-size: 12px;
+  line-height: 1.9;
+}
+.experience-page .quantity {
+  font-size: 36px;
+}
+.experience-page .quantity.vitamins {
+  font-size: 23px;
+  line-height: 1.5;
+}
+.stage-guide-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 4px;
+  margin-bottom: 22px;
+}
+.stage-guide-links a {
+  font-size: 9px;
+  color: #8b9bb0;
+  border: 1px solid #e5ebf4;
+  border-radius: 5px;
+  padding: 7px 9px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.stage-guide-links a:hover {
+  border-color: #9bb9f6;
+  color: #2463eb;
+}
+.expanded-timeline {
+  overflow-x: auto;
+  display: flex;
+  padding: 0 12px;
+}
+.expanded-timeline button {
+  flex: 1;
+  min-width: 79px;
+}
+.expanded-timeline button>span {
+  border-color: var(--layer-colour);
+  background: color-mix(in srgb,var(--layer-colour) 22%,white);
+}
+.composition-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 20px 3px 0;
+  color: #8696ac;
+  font-size: 10px;
+}
+.composition-bar>div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.composition-bar button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 14px;
+  border: 1px solid #dde6f5;
+  border-radius: 6px;
+  background: #edf3ff;
+  color: #2463eb;
+  font-size: 10px;
+}
+.experience-page .educational-note {
+  font-size: 9px;
+  line-height: 1.8;
+  margin-top: 20px;
+}
+.formula-notes .button {
+  font-size: 11px;
+  gap: 16px;
+}
+.formula-notes {
+  margin-top: 32px;
+}
+/* =====================================================================
+   DEL 18: INGREDIENSAR FOR EI BESTEMD DRIKKE
+   Avgrensa bibliotek og lenkje til heile samlinga.
+   ===================================================================== */
+.scope-back {
+  margin-top: 30px;
+  padding-bottom: 8px;
+}
+.scoped-intro {
+  padding-top: 24px;
+}
+.scoped-intro h1 {
+  font-size: 44px;
+  letter-spacing: -1.8px;
+}
+.scope-notice {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #f7f9fc;
+  border: 1px solid #e6edf5;
+  border-radius: 9px;
+  padding: 20px 24px;
+  margin: 22px 0 30px;
+}
+.scope-notice img {
+  height: 60px;
+  width: 45px;
+  object-fit: contain;
+}
+.scope-notice strong {
+  font-size: 12px;
+  font-weight: 550;
+}
+.scope-notice p {
+  font-size: 10px;
+  line-height: 1.9;
+  color: #95a0b0;
+  margin: 7px 0 0;
+}
+.library-separation {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  border-top: 1px solid #e5ebf2;
+  margin-top: 28px;
+  padding: 26px 0 15px;
+  color: #8295af;
+}
+.library-separation>svg {
+  color: #2463eb;
+  flex: none;
+}
+.library-separation h2 {
+  font-family: Manrope,sans-serif;
+  font-size: 17px;
+  font-weight: 550;
+  letter-spacing: -.4px;
+  margin: 0 0 7px;
+  color: #25374f;
+}
+.library-separation p {
+  font-size: 11px;
+  color: #98a5b6;
+  margin: 0;
+}
+.library-separation>.text-link {
+  margin-left: auto;
+  flex: none;
+}
+.context-strip {
+  border: 1px solid #e4eaf3;
+  border-radius: 7px;
+  padding: 15px 19px;
+  font-size: 10px;
+  color: #8797ae;
+  line-height: 1.9;
+  margin-top: 22px;
+}
+.context-strip strong {
+  display: block;
+  color: #4c6689;
+  font-weight: 550;
+  margin-bottom: 5px;
+}
+.effects-grid>section {
+  padding: 30px;
+}
+.effects-grid p {
+  font-size: 13px;
+  line-height: 2.05;
+}
+.evidence-block>p {
+  line-height: 2.05;
+}
+.complete-library-link {
+  margin-top: 28px;
+}
+/* =====================================================================
+   DEL 19: METODETEKST OG VIDARE MOBILTILPASSING
+   Om-metoden, lastetekst og skjermtilpassingar.
+   ===================================================================== */
+.about-method {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 55px;
+  margin-top: 45px;
+  border-top: 1px solid #e6ebf2;
+  padding-top: 35px;
+}
+.about-method h2 {
+  font-family: Manrope,sans-serif;
+  font-size: 30px;
+  line-height: 1.4;
+  letter-spacing: -1px;
+  font-weight: 550;
+  margin-top: 15px;
+}
+.about-method p {
+  font-size: 12px;
+  color: #8998ab;
+  line-height: 2;
+}
+.about-method a {
+  color: #2463eb;
+}
+.about-page>.button {
+  margin-top: 30px;
+}
+.studio-loading {
+  white-space: nowrap;
+  color: #8a9cb2;
+  font-size: 11px;
+}
+@media(max-width:1050px) {
+  .collection-intro h1 {
+    font-size: 57px;
+  }
+  .local-label {
+    display: none;
+  }
+  .drink-tabs {
+    gap: 23px;
+  }
+  .experience-page .scene-area {
+    height: 580px;
+  }
+  .experience-page .ingredient-content h3 {
+    font-size: 23px;
+  }
+  .experience-page .quantity {
+    font-size: 31px;
+  }
+  .card-stats {
+    gap: 23px;
+  }
+  .card-stats strong {
+    font-size: 11px;
+  }
+  .drink-card h2 {
+    font-size: 19px;
+  }
+  .about-method {
+    gap: 35px;
+  }
+  .experience-page .ingredient-panel {
+    padding-left: 26px;
+    padding-right: 26px;
+  }
+}
+@media(max-width:700px) {
+  .collection-intro h1 {
+    font-size: 48px;
+    letter-spacing: -2.6px;
+  }
+  .collection-intro:after {
+    display: none;
+  }
+  .collection-bar {
+    font-size: 6px;
+  }
+  .drink-filters {
+    gap: 6px;
+  }
+  .drink-filters button {
+    padding: 10px 12px;
+  }
+  .drink-card-art {
+    height: 260px;
+  }
+  .drink-card-art img {
+    height: 210px;
+  }
+  .drink-card-copy>p {
+    min-height: 0;
+  }
+  .card-stats {
+    gap: 35px;
+  }
+  .card-stats strong {
+    font-size: 12px;
+  }
+  .drink-card h2 {
+    font-size: 22px;
+  }
+  .drink-tabs {
+    gap: 20px;
+    align-items: stretch;
+    margin-top: 20px;
+    margin-bottom: 22px;
+  }
+  .drink-tabs a {
+    font-size: 9px;
+    line-height: 1.7;
+    gap: 6px;
+    padding: 12px 0;
+    flex: 1;
+  }
+  .drink-tabs svg {
+    width: 13px;
+    flex: none;
+  }
+  .drink-tabs a>span {
+    font-size: 7px;
+    padding: 2px 5px;
+  }
+  .experience-page .scene-area {
+    height: 455px;
+  }
+  .experience-page .lab-main {
+    display: flex;
+  }
+  .experience-page .ingredient-panel {
+    margin: 0 20px 22px;
+    padding: 22px 0 0;
+    min-height: 0;
+  }
+  .experience-page .ingredient-content h3 {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+  .experience-page .quantity {
+    font-size: 31px;
+  }
+  .experience-page .quantity.vitamins {
+    font-size: 22px;
+  }
+  .experience-page .ingredient-content p {
+    font-size: 12px;
+  }
+  .experience-page .ingredient-symbol {
+    margin-top: 15px;
+  }
+  .stage-guide-links {
+    margin-bottom: 20px;
+  }
+  .stage-guide-links a {
+    font-size: 9px;
+    min-height: 36px;
+  }
+  .expanded-timeline {
+    display: grid;
+    grid-template-columns: repeat(4,minmax(0,1fr));
+    padding: 0 8px;
+    overflow: visible;
+  }
+  .expanded-timeline button {
+    min-width: 0;
+    font-size: 7px;
+    padding: 12px 2px;
+  }
+  .scene-formula {
+    font-size: 7px;
+    right: 17px;
+  }
+  .experience-page .scene-caption {
+    font-size: 5px;
+    letter-spacing: .7px;
+    bottom: 14px;
+  }
+  .experience-page .begin-overlay {
+    bottom: 48px;
+  }
+  .composition-bar {
+    align-items: flex-start;
+    font-size: 9px;
+    padding-top: 16px;
+  }
+  .composition-bar>div {
+    max-width: 50%;
+    line-height: 1.8;
+    align-items: flex-start;
+  }
+  .composition-bar>div>svg {
+    flex: none;
+    margin-top: 2px;
+    width: 14px;
+  }
+  .composition-bar button {
+    font-size: 9px;
+    white-space: nowrap;
+    padding: 10px;
+  }
+  .experience-page .educational-note {
+    font-size: 8px;
+  }
+  .scoped-intro h1 {
+    font-size: 33px;
+  }
+  .scope-back {
+    margin-top: 25px;
+  }
+  .scope-notice {
+    padding: 17px;
+    gap: 15px;
+    align-items: flex-start;
+  }
+  .scope-notice img {
+    height: 48px;
+    width: 30px;
+    flex: none;
+  }
+  .scope-notice strong {
+    font-size: 11px;
+  }
+  .scope-notice p {
+    font-size: 10px;
+  }
+  .library-separation {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .library-separation>.text-link {
+    width: calc(100% - 34px);
+    min-width: 0;
+    margin: 5px 0 0 34px;
+    font-size: 10px;
+  }
+  .library-separation h2 {
+    font-size: 15px;
+  }
+  .library-separation p {
+    font-size: 10px;
+  }
+  .effects-grid>section {
+    padding: 24px;
+  }
+  .effects-grid p {
+    font-size: 12px;
+    line-height: 2;
+  }
+  .context-strip {
+    font-size: 10px;
+    padding: 16px;
+  }
+  .about-method {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: 30px;
+    padding-top: 27px;
+  }
+  .about-method h2 {
+    font-size: 26px;
+  }
+  .about-method p {
+    font-size: 12px;
+  }
+  .article-title>span {
+    overflow-wrap: anywhere;
+  }
+  .article-title h1,.quantity {
+    overflow-wrap: anywhere;
+  }
+  .lab-badge {
+    max-width: 110px;
+    line-height: 1.8;
+    text-align: right;
+    letter-spacing: .8px;
+  }
+}
+/* =====================================================================
+   DEL 20: KAPITTELVELJAR OG TILSETJINGSTYPE
+   Nedtrekksliste for steg og merking av pulver, dropar og liknande.
+   ===================================================================== */
+.chapter-picker {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 17px 22px 9px;
+  border-top: 1px solid #e5ebf2;
+}
+.chapter-picker label {
+  font-size: 10px;
+  color: #5e738f;
+  white-space: nowrap;
+}
+.chapter-picker label>span {
+  color: #98a6b8;
+}
+.chapter-picker select {
+  max-width: 55%;
+  font: inherit;
+  font-size: 11px;
+  padding: 10px 30px 10px 12px;
+  border: 1px solid #dce5f0;
+  border-radius: 6px;
+  background: #fff;
+  color: #435c7e;
+  min-height: 40px;
+  cursor: pointer;
+}
+.delivery-label {
+  font-size: 7px;
+  letter-spacing: 1px;
+  color: #6682a1;
+  margin-top: 19px;
+  line-height: 1.9;
+}
+.delivery-label>span {
+  color: #a5b0bf;
+}
+.expanded-timeline {
+  position: relative;
+  scrollbar-width: thin;
+  scrollbar-color: #c7d4e6 #f5f8fc;
+  overscroll-behavior-x: contain;
+  scroll-padding: 16px;
+}
+.expanded-timeline button {
+  flex: 0 0 91px;
+  white-space: nowrap;
+}
+.drink-card-art img[src$=".jpg"] {
+  mix-blend-mode: multiply;
+}
+.ingredient-content h3 {
+  overflow-wrap: anywhere;
+}
+@media(max-width:700px) {
+  .chapter-picker {
+    display: block;
+    padding: 17px 15px 8px;
+  }
+  .chapter-picker label {
+    display: block;
+    margin-bottom: 9px;
+    font-size: 10px;
+  }
+  .chapter-picker select {
+    width: 100%;
+    max-width: 100%;
+    font-size: 12px;
+  }
+  .expanded-timeline {
+    display: flex;
+    overflow-x: auto;
+    padding: 0 8px;
+  }
+  .expanded-timeline button {
+    min-width: 76px;
+    flex-basis: 76px;
+    font-size: 8px;
+    padding: 13px 2px;
+    min-height: 62px;
+  }
+  .delivery-label {
+    font-size: 7px;
+  }
+  .experience-page .ingredient-content h3 {
+    padding-right: 32px;
+  }
+}
+/* =====================================================================
+   DEL 21: LESBARHEIT I INGREDIENSARTIKLAR
+   Større fagtekst og merking av kroppsdelar.
+   ===================================================================== */
+.ingredient-article .article-header>p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #45556c;
+  max-width: 68ch;
+}
+.ingredient-article .body-explanation {
+  align-items: flex-start;
+  padding: 28px 30px;
+}
+.ingredient-article .body-explanation>svg {
+  flex: none;
+  margin-top: 3px;
+}
+.ingredient-article .body-explanation p {
+  font-size: 17px;
+  line-height: 1.85;
+  color: #253f60;
+  max-width: 68ch;
+  margin: 12px 0 0;
+}
+.body-areas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 19px;
+}
+.body-areas>span {
+  font-size: 11px;
+  line-height: 1.5;
+  padding: 7px 11px;
+  border: 1px solid #d2def0;
+  border-radius: 20px;
+  background: #fff;
+  color: #365c8b;
+}
+.ingredient-article .effects-grid>section {
+  padding: 32px;
+}
+.ingredient-article .effects-grid h2 {
+  font-size: 25px;
+  margin: 17px 0;
+}
+.ingredient-article .effects-grid p {
+  font-size: 16px;
+  line-height: 1.85;
+  color: #354458;
+  max-width: 64ch;
+  margin-bottom: 0;
+}
+.ingredient-article .effect-label {
+  font-size: 10px;
+  letter-spacing: 1.4px;
+}
+.ingredient-article .evidence-block>p {
+  font-size: 15px;
+  line-height: 1.85;
+  color: #46566d;
+  max-width: 75ch;
+}
+.ingredient-article .context-strip {
+  font-size: 12px;
+  line-height: 1.85;
+  color: #607189;
+}
+.ingredient-article .article-sources a {
+  font-size: 12px;
+}
+.ingredient-article .article-header .eyebrow {
+  font-size: 9px;
+}
+/* =====================================================================
+   DEL 22: AVSPELINGSFART
+   Knappane for halv, normal og raskare avspeling.
+   ===================================================================== */
+.speed-settings {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 13px 22px 18px;
+  border-top: 1px solid #eef1f6;
+}
+.speed-settings>span {
+  font-size: 12px;
+  color: #52677f;
+}
+.speed-settings>div {
+  display: flex;
+  gap: 5px;
+}
+.speed-settings button {
+  background: #f5f7fa;
+  color: #61738b;
+  border: 1px solid #e4eaf2;
+  border-radius: 6px;
+  min-width: 45px;
+  min-height: 36px;
+  padding: 8px 10px;
+  font-size: 11px;
+  font-weight: 550;
+}
+.speed-settings button.selected {
+  background: #2463eb;
+  border-color: #2463eb;
+  color: #fff;
+}
+.speed-settings button:hover {
+  border-color: #8fafea;
+}
+.speed-settings button:focus-visible {
+  outline: 2px solid #2463eb;
+  outline-offset: 3px;
+}
+/* =====================================================================
+   DEL 23: NÆRINGSTABELL OG MOBILVISNING
+   Næringsinnhald per behaldar og referansemengd.
+   ===================================================================== */
+.nutrition-section {
+  margin: 40px 0 45px;
+  border: 1px solid #e0e7f0;
+  border-radius: 13px;
+  background: #fff;
+  overflow: hidden;
+}
+.nutrition-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  padding: 32px;
+}
+.nutrition-intro h2 {
+  font-size: 30px;
+  letter-spacing: -1px;
+  margin: 14px 0 10px;
+  font-weight: 550;
+}
+.nutrition-intro h2>span {
+  color: #2463eb;
+}
+.nutrition-intro p {
+  font-size: 13px;
+  color: #607086;
+  line-height: 1.8;
+  margin: 0;
+}
+.nutrition-volume {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+  font-size: 37px;
+  letter-spacing: -1px;
+  color: #233b5c;
+}
+.nutrition-volume small {
+  font-size: 10px;
+  letter-spacing: .5px;
+  color: #607086;
+  white-space: nowrap;
+}
+.nutrition-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+  color: #35465d;
+  table-layout: fixed;
+}
+.nutrition-table caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+.nutrition-table thead {
+  background: #f3f6fb;
+}
+.nutrition-table thead th {
+  font-size: 12px;
+  font-weight: 550;
+  padding: 20px 30px;
+  text-align: right;
+  border-top: 1px solid #e1e8f1;
+  border-bottom: 1px solid #e1e8f1;
+  color: #334d70;
+  width: 27%;
+}
+.nutrition-table thead th:first-child {
+  text-align: left;
+  width: 46%;
+}
+.nutrition-table thead th>span {
+  display: block;
+  font-size: 10px;
+  font-weight: 400;
+  color: #718097;
+  margin-top: 5px;
+}
+.nutrition-table tbody th,.nutrition-table td {
+  padding: 15px 30px;
+  border-bottom: 1px solid #eaf0f6;
+}
+.nutrition-table tbody th {
+  text-align: left;
+  font-weight: 450;
+}
+.nutrition-table td {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  color: #263d5c;
+}
+.nutrition-table .unknown {
+  color: #758399;
+  font-size: 12px;
+  white-space: normal;
+}
+.nutrition-table .caffeine-row {
+  background: #edf4ff;
+}
+.nutrition-table .caffeine-row th,.nutrition-table .caffeine-row td {
+  color: #2054a4;
+  font-weight: 600;
+}
+.nutrition-tag {
+  display: inline-block;
+  font-size: 7px;
+  letter-spacing: 1px;
+  margin-left: 12px;
+  background: #dce9ff;
+  color: #3265af;
+  border-radius: 3px;
+  padding: 4px 6px;
+  vertical-align: middle;
+}
+.nutrition-table .nutrition-subrow th {
+  padding-left: 43px;
+  color: #6d7d91;
+  font-size: 12px;
+}
+.nutrition-footnote {
+  display: flex;
+  gap: 13px;
+  padding: 24px 30px;
+  background: #fafbfd;
+}
+.nutrition-footnote>svg {
+  flex: none;
+  color: #7791b3;
+  margin-top: 3px;
+}
+.nutrition-footnote p {
+  font-size: 12px;
+  line-height: 1.85;
+  color: #62728a;
+  max-width: 85ch;
+  margin: 0 0 8px;
+}
+.nutrition-footnote strong {
+  font-weight: 550;
+  color: #405878;
+}
+.nutrition-footnote a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: #2463eb;
+  margin: 4px 18px 0 0;
+}
+@media(max-width:700px) {
+  .ingredient-article .article-header>p {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+  .ingredient-article .body-explanation {
+    padding: 24px 20px;
+    gap: 14px;
+  }
+  .ingredient-article .body-explanation>svg {
+    width: 22px;
+  }
+  .ingredient-article .body-explanation p {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+  .body-areas {
+    gap: 6px;
+    margin-top: 15px;
+  }
+  .body-areas>span {
+    font-size: 10px;
+    padding: 6px 9px;
+  }
+  .ingredient-article .effects-grid>section {
+    padding: 26px 22px;
+  }
+  .ingredient-article .effects-grid h2 {
+    font-size: 24px;
+  }
+  .ingredient-article .effects-grid p {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+  .ingredient-article .evidence-block>p {
+    font-size: 14px;
+    line-height: 1.85;
+  }
+  .ingredient-article .context-strip {
+    font-size: 11px;
+  }
+  .speed-settings {
+    padding: 12px 13px 16px;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .speed-settings>span {
+    font-size: 11px;
+  }
+  .speed-settings>div {
+    gap: 4px;
+  }
+  .speed-settings button {
+    min-width: 34px;
+    min-height: 40px;
+    font-size: 10px;
+    padding: 8px;
+  }
+  .nutrition-section {
+    margin: 30px 0;
+    border-radius: 10px;
+  }
+  .nutrition-intro {
+    padding: 24px 19px;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .nutrition-intro h2 {
+    font-size: 25px;
+    margin-top: 12px;
+    line-height: 1.2;
+  }
+  .nutrition-intro p {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+  .nutrition-volume {
+    font-size: 29px;
+    padding-top: 24px;
+  }
+  .nutrition-volume small {
+    font-size: 8px;
+  }
+  .nutrition-table {
+    font-size: 12px;
+  }
+  .nutrition-table thead th {
+    padding: 16px 10px;
+    font-size: 11px;
+    width: 29%;
+  }
+  .nutrition-table thead th:first-child {
+    width: 42%;
+    padding-left: 17px;
+  }
+  .nutrition-table thead th>span {
+    font-size: 9px;
+  }
+  .nutrition-table tbody th,.nutrition-table td {
+    padding: 14px 10px;
+  }
+  .nutrition-table tbody th {
+    padding-left: 17px;
+    overflow-wrap: anywhere;
+  }
+  .nutrition-table .nutrition-subrow th {
+    padding-left: 25px;
+    font-size: 11px;
+  }
+  .nutrition-tag {
+    display: none;
+  }
+  .nutrition-table .unknown {
+    font-size: 10px;
+  }
+  .nutrition-footnote {
+    padding: 19px 17px;
+    gap: 9px;
+  }
+  .nutrition-footnote p {
+    font-size: 11px;
+  }
+  .nutrition-footnote a {
+    font-size: 11px;
+    min-height: 32px;
+  }
+}
+/* =====================================================================
+   DEL 24: SISTE JUSTERINGAR AV FAGTEKST
+   Tekststorleik, einingar og næringsmerknader.
+   ===================================================================== */
+.experience-page .ingredient-content p {
+  font-size: 14px;
+  line-height: 1.85;
+  color: #53657d;
+}
+.experience-page .quantity-unit {
+  font-size: 11px;
+  color: #73839a;
+}
+.experience-page .stage-guide-links a {
+  color: #5d779a;
+  font-size: 10px;
+}
+.nutrition-subrow th {
+  font-weight: 400;
+}
+@media(max-width:700px) {
+  .experience-page .ingredient-content p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+  .experience-page .quantity-unit {
+    font-size: 11px;
+  }
+}
+
+/* =====================================================================
+   DEL 25: SPRÅKVAL OG TILGJENGE
+   Nynorsk, språkveljar, skjult innhald og 3D-teikneområdet.
+   ===================================================================== */
+[hidden] {
+  display: none !important;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.language-control select {
+  font: inherit;
+  font-size: 12px;
+  color: #50617a;
+  background: #f6f8fc;
+  border: 1px solid #e1e7f1;
+  border-radius: 7px;
+  padding: 9px 28px 9px 11px;
+  max-width: 175px;
+  cursor: pointer;
+}
+.language-control select:focus-visible {
+  outline: 3px solid #7ca6ff;
+  outline-offset: 3px;
+}
+.canvas-host {
+  position: absolute;
+  inset: 0;
+}
+.canvas-host canvas {
+  display: block;
+}
+main h1[tabindex="-1"]:focus {
+  outline: none;
+}
+.local-label > span:last-child {
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background: transparent;
+}
+html[lang="nn"] .collection-intro:after {
+  content: "EIN NÆRARE KIKK";
+}
+@media (max-width: 1150px) {
+  .nav-controls > .local-label {
+    display: none;
+  }
+  .nav-links {
+    gap: 25px;
+  }
+}
+@media (max-width: 700px) {
+  .nav-controls {
+    gap: 10px;
+  }
+  .language-control select {
+    font-size: 11px;
+    max-width: 138px;
+    min-height: 40px;
+    padding-left: 8px;
+  }
+  .nav {
+    gap: 10px;
+  }
+  .language-control {
+    min-width: 0;
+  }
+}
+
+
+/* =====================================================================
+   DEL 26: SKRIFTTYPELISENSAR
+   Lisensane for dei lokale skrifttypane blir bevarte her.
+   ===================================================================== */
+/*
+LISENSAR FOR DEI LOKALE SKRIFTTYPANE
+dmsans-OFL.txt
+Copyright 2014 The DM Sans Project Authors (https://github.com/googlefonts/dm-fonts)
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+https://scripts.sil.org/OFL
+
+
+-----------------------------------------------------------
+SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+-----------------------------------------------------------
+
+PREAMBLE
+The goals of the Open Font License (OFL) are to stimulate worldwide
+development of collaborative font projects, to support the font creation
+efforts of academic and linguistic communities, and to provide a free and
+open framework in which fonts may be shared and improved in partnership
+with others.
+
+The OFL allows the licensed fonts to be used, studied, modified and
+redistributed freely as long as they are not sold by themselves. The
+fonts, including any derivative works, can be bundled, embedded, 
+redistributed and/or sold with any software provided that any reserved
+names are not used by derivative works. The fonts and derivatives,
+however, cannot be released under any other type of license. The
+requirement for fonts to remain under this license does not apply
+to any document created using the fonts or their derivatives.
+
+DEFINITIONS
+"Font Software" refers to the set of files released by the Copyright
+Holder(s) under this license and clearly marked as such. This may
+include source files, build scripts and documentation.
+
+"Reserved Font Name" refers to any names specified as such after the
+copyright statement(s).
+
+"Original Version" refers to the collection of Font Software components as
+distributed by the Copyright Holder(s).
+
+"Modified Version" refers to any derivative made by adding to, deleting,
+or substituting -- in part or in whole -- any of the components of the
+Original Version, by changing formats or by porting the Font Software to a
+new environment.
+
+"Author" refers to any designer, engineer, programmer, technical
+writer or other person who contributed to the Font Software.
+
+PERMISSION & CONDITIONS
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of the Font Software, to use, study, copy, merge, embed, modify,
+redistribute, and sell modified and unmodified copies of the Font
+Software, subject to the following conditions:
+
+1) Neither the Font Software nor any of its individual components,
+in Original or Modified Versions, may be sold by itself.
+
+2) Original or Modified Versions of the Font Software may be bundled,
+redistributed and/or sold with any software, provided that each copy
+contains the above copyright notice and this license. These can be
+included either as stand-alone text files, human-readable headers or
+in the appropriate machine-readable metadata fields within text or
+binary files as long as those fields can be easily viewed by the user.
+
+3) No Modified Version of the Font Software may use the Reserved Font
+Name(s) unless explicit written permission is granted by the corresponding
+Copyright Holder. This restriction only applies to the primary font name as
+presented to the users.
+
+4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
+Software shall not be used to promote, endorse or advertise any
+Modified Version, except to acknowledge the contribution(s) of the
+Copyright Holder(s) and the Author(s) or with their explicit written
+permission.
+
+5) The Font Software, modified or unmodified, in part or in whole,
+must be distributed entirely under this license, and must not be
+distributed under any other license. The requirement for fonts to
+remain under this license does not apply to any document created
+using the Font Software.
+
+TERMINATION
+This license becomes null and void if any of the above conditions are
+not met.
+
+DISCLAIMER
+THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
+DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
+OTHER DEALINGS IN THE FONT SOFTWARE.
+
+
+manrope-OFL.txt
+Copyright 2018 The Manrope Project Authors (https://github.com/googlefonts/manrope)
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+
+
+-----------------------------------------------------------
+SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+-----------------------------------------------------------
+
+PREAMBLE
+The goals of the Open Font License (OFL) are to stimulate worldwide
+development of collaborative font projects, to support the font creation
+efforts of academic and linguistic communities, and to provide a free and
+open framework in which fonts may be shared and improved in partnership
+with others.
+
+The OFL allows the licensed fonts to be used, studied, modified and
+redistributed freely as long as they are not sold by themselves. The
+fonts, including any derivative works, can be bundled, embedded, 
+redistributed and/or sold with any software provided that any reserved
+names are not used by derivative works. The fonts and derivatives,
+however, cannot be released under any other type of license. The
+requirement for fonts to remain under this license does not apply
+to any document created using the fonts or their derivatives.
+
+DEFINITIONS
+"Font Software" refers to the set of files released by the Copyright
+Holder(s) under this license and clearly marked as such. This may
+include source files, build scripts and documentation.
+
+"Reserved Font Name" refers to any names specified as such after the
+copyright statement(s).
+
+"Original Version" refers to the collection of Font Software components as
+distributed by the Copyright Holder(s).
+
+"Modified Version" refers to any derivative made by adding to, deleting,
+or substituting -- in part or in whole -- any of the components of the
+Original Version, by changing formats or by porting the Font Software to a
+new environment.
+
+"Author" refers to any designer, engineer, programmer, technical
+writer or other person who contributed to the Font Software.
+
+PERMISSION & CONDITIONS
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of the Font Software, to use, study, copy, merge, embed, modify,
+redistribute, and sell modified and unmodified copies of the Font
+Software, subject to the following conditions:
+
+1) Neither the Font Software nor any of its individual components,
+in Original or Modified Versions, may be sold by itself.
+
+2) Original or Modified Versions of the Font Software may be bundled,
+redistributed and/or sold with any software, provided that each copy
+contains the above copyright notice and this license. These can be
+included either as stand-alone text files, human-readable headers or
+in the appropriate machine-readable metadata fields within text or
+binary files as long as those fields can be easily viewed by the user.
+
+3) No Modified Version of the Font Software may use the Reserved Font
+Name(s) unless explicit written permission is granted by the corresponding
+Copyright Holder. This restriction only applies to the primary font name as
+presented to the users.
+
+4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
+Software shall not be used to promote, endorse or advertise any
+Modified Version, except to acknowledge the contribution(s) of the
+Copyright Holder(s) and the Author(s) or with their explicit written
+permission.
+
+5) The Font Software, modified or unmodified, in part or in whole,
+must be distributed entirely under this license, and must not be
+distributed under any other license. The requirement for fonts to
+remain under this license does not apply to any document created
+using the Font Software.
+
+TERMINATION
+This license becomes null and void if any of the above conditions are
+not met.
+
+DISCLAIMER
+THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
+DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
+OTHER DEALINGS IN THE FONT SOFTWARE.
+
+*/

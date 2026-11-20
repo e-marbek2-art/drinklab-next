@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#f8fafc">
+    <meta name="description" content="Explore familiar drinks, their ingredients and the evidence, layer by layer.">
+    <title>DrinkLab</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- DRINKLAB: Opne denne fila med dobbeltklikk. Ingen server er nødvendig.
+         Dei fem kodefilene er:
+         index.html   – sidestruktur og navigasjon
+         styles.css   – utsjånad og skrifttypar
+         script.js    – sider, knappar, søk og avspeling
+         data.js      – drikkar, ingrediensar og nynorske tekstar
+         animation.js – den eksisterande 3D-motoren (JavaScript)
+         bilete/      – lokale produktbilete og fire skrifttypefiler
+         Data må lastast før sidekoden; defer bevarer denne rekkjefølgja. -->
+    <script defer src="data.js"></script>
+    <script defer src="animation.js"></script>
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <!-- 1. Navigasjonen er felles for alle sidene. -->
+    <header class="nav-wrap">
+      <nav class="nav" aria-label="Main navigation" data-i18n-label="Main navigation">
+        <a class="brand" href="#/" aria-label="DrinkLab">
+          <span class="brand-icon" data-icon="FlaskConical"></span>
+          drinklab<span class="brand-dot">.</span>
+        </a>
+        <div class="nav-links">
+          <a href="#/" data-nav="/" data-i18n="Choose a drink">Choose a drink</a>
+          <a href="#/ingredients" data-nav="/ingredients" data-i18n="Ingredient library">Ingredient library</a>
+          <a href="#/about" data-nav="/about" data-i18n="About the lab">About the lab</a>
+        </div>
+        <div class="nav-controls">
+          <span class="local-label"><span></span><span data-i18n="LOCAL DEVELOPMENT">LOCAL DEVELOPMENT</span></span>
+          <label class="language-control">
+            <span class="sr-only" data-i18n="Language">Language</span>
+            <select id="language" aria-label="Language" data-i18n-label="Language">
+              <option value="en" lang="en">English</option>
+              <option value="nn" lang="nn">Norsk (nynorsk)</option>
+            </select>
+          </label>
+          <button class="mobile-toggle icon-button" data-action="menu" aria-expanded="false" aria-label="Open menu" data-i18n-label="Open menu"><span data-icon="Menu"></span></button>
+        </div>
+      </nav>
+      <div class="mobile-menu" id="mobile-menu" hidden>
+        <a href="#/" data-i18n="Choose a drink">Choose a drink</a>
+        <a href="#/ingredients" data-i18n="Ingredient library">Ingredient library</a>
+        <a href="#/about" data-i18n="About the lab">About the lab</a>
+      </div>
+    </header>
+
+    <!-- 2. script.js viser den valde sida her. # gir eigne sider også når
+         du dobbeltklikkar index.html utan ein server. -->
+    <main id="page"></main>
+    <noscript>DrinkLab needs JavaScript. Slå på JavaScript i nettlesaren for å bruke DrinkLab.</noscript>
+
+    <!-- 3. Felles botntekst. -->
+    <footer class="page-width">
+      <a class="brand" href="#/"><span data-icon="FlaskConical"></span>drinklab<span class="brand-dot">.</span></a>
+      <span data-i18n="More understanding in every glass.">More understanding in every glass.</span>
+      <span data-i18n="Independent educational project · No brand affiliation.">Independent educational project · No brand affiliation.</span>
+      <a href="#/about" aria-label="About DrinkLab" data-i18n-label="About DrinkLab"><span data-icon="BookOpen"></span></a>
+    </footer>
+  </body>
+</html>
